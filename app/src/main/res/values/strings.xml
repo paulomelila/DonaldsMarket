@@ -1,0 +1,99 @@
+<resources>
+    <string name="app_name">Donald\'s Market</string>
+
+    <!--GOOGLE MAPS API KEY-->
+    <string name="google_maps_key">AIzaSyDeXAG2gHezsRAqbIpvjxROE6lGKzJveOw</string>
+
+    <!--TABS-->
+    <string name="home_title">Home</string>
+    <string name="specials_title">Specials</string>
+    <string name="locations_title">Locations</string>
+
+    <!--SPECIALS-->
+    <string name="notification_title">Our Specials week is here!</string>
+    <string name="notification_text">Check our flyer for great offers</string>
+
+    <string name="specials_schedule">Our Specials are available for one week starting every 3rd Thursday of each month.\n</string>
+    <string name="specials_current">\ This month\'s specials flyer will be available on from  \</string>
+    <string name="specials_next">\ Next specials flyer will be available on from \</string>
+
+    <!--LOCATIONS-->
+
+    <string name="store_hours_title">Store Hours</string>
+    <string name="store_hours_content">Monday – Saturday: 9:00AM – 8:00PM\nSunday &amp; Holidays: 9:30AM – 8:00PM</string>
+    <string name="parking_info">Parking Information</string>
+
+    <!--HASTINGS SUNRISE-->
+    <string name="hastings_name">Hastings Sunrise</string>
+    <string name="hastings_address">2342 East Hastings Street, Vancouver, BC V5L 1V5</string>
+    <string name="hastings_phone">604&#8211;254&#8211;3014</string>
+    <string name="hastings_parking_info">There is free parking along Hastings and Garden Drive. Do not park at Church’s Chicken parking lot.</string>
+
+    <!--COMMERCIAL DRIVE-->
+    <string name="commercial_name">Commercial Drive</string>
+    <string name="commercial_address">2279 Commercial Drive, Vancouver, BC V5N 4B6</string>
+    <string name="commercial_phone">604&#8211;255&#8211;1440</string>
+    <string name="commercial_parking_info">There is free parking behind Donald’s Market. Do not park behind the 24 hour food store parking lot.</string>
+
+    <!--RIVER MARKET NEW WEST-->
+    <string name="newwest_name">River Market New West</string>
+    <string name="newwest_address">Unit 130 – 810 Quayside Drive, New Westminster, BC V3M 6B9</string>
+    <string name="newwest_phone">604&#8211;525&#8211;3331</string>
+    <string name="newwest_parking_info">
+        Free 30-minute parking is available at the East Parking Lot; the surface lot near Begbie &amp; Front Street, beside the Fraser River Discovery Centre.\n
+        Please check the signage for these stalls and follow the instructions on the signs – please register your stall number at the meter. Pay parking is available at:\n\n
+        • The same East Parking Lot (Lot #9056)\n
+        • Between Fraser River Discovery Centre and Westminster Pier Park\n
+        • West Underground Parking Lot (Lot #9014)\n
+        • Under the Inn at the Quay\n\n
+        Donald’s Market will reimburse a maximum of $2.00 with a minimum purchase of $20. Please present your parking receipt to the cashier during checkout.
+    </string>
+
+    <!--PORT COQUITLAM-->
+    <string name="poco_name">Port Coquitlam</string>
+    <string name="poco_address">2627 Shaughnessy St #120, Port Coquitlam, BC V3C 0E1</string>
+    <string name="poco_phone">604&#8211;945&#8211;7741</string>
+    <string name="poco_parking_info">There is free parking in the complex.</string>
+
+    <!--SECTIONS-->
+    <string name="bakery_name">Baked Goods</string>
+    <string name="bakery_description">The bakery section is the most attractive spot in the store. It is filled with the delightful scent of freshly baked breads and cookies delivered daily from local bakers.</string>
+
+    <string name="bulk_name">Bulk</string>
+    <string name="bulk_description">If a bag of beans is too big, or a bag of nuts is too small for you, you can get any quantity you want from our bulk selection, from snacks to baking flours and organics.</string>
+
+    <string name="meat_name">Meat</string>
+    <string name="meat_description">When you are deciding the main course for your dinner, visit our meat department. You will find poultry, beef, pork, and seafood. For a healthier choice, we also carry medication-free chicken and organic meat.</string>
+
+    <string name="produce_name">Produce</string>
+    <string name="produce_description">Our variety of fruits and vegetables include locally grown, green house grown, imports, and certified organic. Our produce buyer picks the best quality of fruits and vegetables, and our staff stocks and maintains them, making sure the products are at their best condition.</string>
+
+    <string name="organic_produce_name">Organic Produce</string>
+    <string name="organic_produce_description">Besides organic groceries, we also carry organic produce. By consuming organic produce, we support farmers who choose to farm in an old-fashion natural way, without using synthetic herbicides, pesticides, hormones, or genetically modified organisms (GMOs).</string>
+
+    <string name="grocery_name">Grocery</string>
+    <string name="grocery_description">Come and explore our grocery aisles, we have everything to complete your meal from appetizers to desserts. Whether you are making a fancy dinner or a quick lunch, our selection of grocery – ranging from essential to gourmet, from local to import – will fulfill your cooking needs.</string>
+
+    <string name="tea_name">Steam Tea House</string>
+    <string name="tea_description">We offer a wide variety of teas available in bulk quantities to take home, or to drink on-the-go! ‘Like‘ our page on Facebook and get to know our limited edition seasonal blends, access exciting giveaways, try out our tea-infused dinner recipes, and much, much more!</string>
+
+    <string name="deli_name">Deli</string>
+    <string name="deli_description">We are excited to bring you our finest selection of cheeses, meats, antipasti, and panini’s! The Deli department is available only at the Donald’s Market New Westminster and Donald’s Market Port Coquitlam location.</string>
+
+    <string name="organic_products_name">Organic Products</string>
+    <string name="organic_products_description">We have a variety of organic products in the store of many different manufacturers ranging from frozen products, grains, pasta, personal care items, cookies, dairy products, coffee and so on.</string>
+
+    <string name="dm_kitchen_name">DM Kitchen</string>
+    <string name="dm_kitchen_description">We provide a wide variety of ready-to-serve dishes at DM Kitchen on Hastings, for a fast solution of dinner, lunch, or even party. Check out our regular menu, but don’t forget to stop by for daily special. DM Kitchen is available only at the Donald’s Market Hastings location.</string>
+
+    <string name="organics_name">Organics</string>
+    <string name="organics_description">Organic foods are grown without synthetic herbicides, pesticides, hormones, or genetically modified organisms (GMOs). Also, they are farmed in an environmentally sustainable and socially responsible way, focusing on soil regeneration, water conservation and animal welfare. We carry a large variety of organic produce and other products.</string>
+
+    <string name="dairy_name">Dairy</string>
+    <string name="dairy_description">In our dairy department, we have a wide selection of milk, cheese, yogurt and other milk products.</string>
+
+    <!--SERVICE-->
+    <string name="channel_name">Channel Name</string>
+    <string name="channel_description">Channel description</string>
+
+</resources>
