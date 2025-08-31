@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
-    private List<ProductSection> mSectionsList = new ArrayList<>();
+    private final List<ProductSection> mSectionsList = new ArrayList<>();
 
     /* TODO: Have more ideas for home tab
      *
@@ -29,7 +29,7 @@ public class HomeFragment extends Fragment {
      *  Thru chat (cool)
      */
 
-    /* TODO: make listview scrolling smoothier
+    /* TODO: make listview scrolling smoother
      *      Maybe use recyclerview
      */
 
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private class SectionsAdapter extends ArrayAdapter<ProductSection> {
+    private static class SectionsAdapter extends ArrayAdapter<ProductSection> {
 
         public SectionsAdapter(Context context, List<ProductSection> sectionsList) {
             super(context, R.layout.home_list_item, sectionsList);
@@ -106,7 +106,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private class ViewHolder {
+    private static class ViewHolder {
         TextView sectionTitle;
         ImageView sectionImage;
         TextView sectionDescription;

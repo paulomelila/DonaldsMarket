@@ -6,7 +6,7 @@ android {
     namespace "com.paulomelila.donaldsmarket"
     compileSdkVersion 36
     defaultConfig {
-        applicationId "com.paulomelila.donaldsmarket"
+        applicationId "com.paulomelila.com.paulomelila.donaldsmarket"
         minSdkVersion 35
         targetSdkVersion 36
         versionCode 1
