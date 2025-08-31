@@ -1,4 +1,4 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -11,10 +11,11 @@ import android.graphics.drawable.BitmapDrawable;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import static android.support.v4.content.PermissionChecker.checkSelfPermission;
+import static androidx.core.content.ContextCompat.checkSelfPermission;
 import static java.lang.String.valueOf;
 
 public class LocationsFragment extends Fragment {
@@ -152,7 +153,7 @@ public class LocationsFragment extends Fragment {
 
                 int height = 110;
                 int width = 80;
-                BitmapDrawable bitmapdraw = (BitmapDrawable) getResources().getDrawable(R.drawable.map_marker);
+                BitmapDrawable bitmapdraw = (BitmapDrawable) ContextCompat.getDrawable(requireContext(), R.drawable.map_marker);
                 Bitmap b = bitmapdraw.getBitmap();
                 Bitmap marker = Bitmap.createScaledBitmap(b, width, height, false);
 
@@ -188,7 +189,7 @@ public class LocationsFragment extends Fragment {
         });
     }
 
-    private class LocationsAdapter extends ArrayAdapter {
+    private class LocationsAdapter extends ArrayAdapter<Location> {
 
         public LocationsAdapter(Context context, List<Location> locationsList) {
             super(context, R.layout.locations_list_item, locationsList);
@@ -199,7 +200,7 @@ public class LocationsFragment extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             View view = inflater.inflate(R.layout.locations_list_item, parent, false);
 
-            Location location = (Location) getItem(position);
+            Location location = getItem(position);
 
             TextView locationName = view.findViewById(R.id.location_name);
 
@@ -237,25 +238,29 @@ public class LocationsFragment extends Fragment {
     }
 
     private void requestUserPermission() {
-        if (checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
         }
     }
 
     @SuppressLint("MissingPermission")
     private void getUserLocation() {
-        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(getActivity());
+        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity());
 
         mFusedLocationClient.getLastLocation()
                 .addOnSuccessListener(new OnSuccessListener<android.location.Location>() {
                     @SuppressLint("MissingPermission")
                     @Override
                     public void onSuccess(android.location.Location location) {
-                        mUserLocation = new LatLng(location.getLatitude(), location.getLongitude());
+                        if (location != null) {
+                            mUserLocation = new LatLng(location.getLatitude(), location.getLongitude());
 
-                        mMap.moveCamera(CameraUpdateFactory.newLatLng(mUserLocation));
-                        mMap.setMyLocationEnabled(true);
+                            if (mMap != null) {
+                                mMap.moveCamera(CameraUpdateFactory.newLatLng(mUserLocation));
+                                mMap.setMyLocationEnabled(true);
+                            }
+                        }
                     }
                 });
     }

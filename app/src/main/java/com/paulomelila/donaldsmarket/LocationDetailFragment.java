@@ -1,11 +1,11 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.util.Log;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +61,7 @@ public class LocationDetailFragment extends Fragment {
     private void getIntent() {
 
         if (getActivity().getIntent() != null) {
-            mLocation = getActivity().getIntent().getParcelableExtra("Location");
+            mLocation = getActivity().getIntent().getParcelableExtra("Location", Location.class);
         }
     }
 
@@ -98,7 +98,7 @@ public class LocationDetailFragment extends Fragment {
         });
     }
 
-    private class LocationDetailAdapter extends ArrayAdapter {
+    private class LocationDetailAdapter extends ArrayAdapter<LocationDetails> {
 
         public LocationDetailAdapter(Context context, List<LocationDetails> locationDetails) {
             super(context, R.layout.location_detail_list_item, locationDetails);
@@ -109,7 +109,7 @@ public class LocationDetailFragment extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             View view = inflater.inflate(R.layout.location_detail_list_item, parent, false);
 
-            LocationDetails locationDetails = (LocationDetails) getItem(position);
+            LocationDetails locationDetails = getItem(position);
 
             TextView text = view.findViewById(R.id.list_text);
             ImageView icon = view.findViewById(R.id.list_icon);

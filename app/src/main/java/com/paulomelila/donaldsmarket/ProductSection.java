@@ -1,4 +1,4 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
 public class ProductSection {
     private String name;

@@ -1,8 +1,8 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
 
     }
 
-    private class SectionsAdapter extends ArrayAdapter {
+    private class SectionsAdapter extends ArrayAdapter<ProductSection> {
 
         public SectionsAdapter(Context context, List<ProductSection> sectionsList) {
             super(context, R.layout.home_list_item, sectionsList);
@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment {
             LayoutInflater inflater = LayoutInflater.from(getContext());
             View view = inflater.inflate(R.layout.home_list_item, parent, false);
 
-            ProductSection productSection = (ProductSection) getItem(position);
+            ProductSection productSection = getItem(position); // No need to cast anymore
 
             ViewHolder holder = new ViewHolder();
             holder.sectionTitle = view.findViewById(R.id.sectionTitle);
@@ -112,5 +112,3 @@ public class HomeFragment extends Fragment {
         TextView sectionDescription;
     }
 }
-
-

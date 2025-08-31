@@ -1,4 +1,4 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
 import org.junit.Test;
 

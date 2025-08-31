@@ -1,15 +1,9 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
+import androidx.fragment.app.Fragment;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,9 +19,6 @@ import org.jsoup.nodes.Document;
 
 import java.io.IOException;
 import java.util.concurrent.ExecutionException;
-
-import static android.content.Context.NOTIFICATION_SERVICE;
-import static android.text.Layout.JUSTIFICATION_MODE_INTER_WORD;
 
 public class SpecialsFragment extends Fragment {
     private View mView;
@@ -51,7 +42,7 @@ public class SpecialsFragment extends Fragment {
 
         new WebsiteLoader().load();
 
-        buildText();
+        //buildText();
         loadFlyer();
 
         logs();
@@ -61,7 +52,7 @@ public class SpecialsFragment extends Fragment {
 
 
     private void instantiateWidgets() {
-        mSpecialsTextView = mView.findViewById(R.id.specialsTextView);
+        //mSpecialsTextView = mView.findViewById(R.id.specialsTextView);
         mFlyerPhotoView = mView.findViewById(R.id.flyerPhotoView);
     }
 
@@ -76,20 +67,20 @@ public class SpecialsFragment extends Fragment {
      *              YES -> display current month message.
      *              NO  -> display next month message.
      */
-    private void buildText() {
-        mSpecialsTextView.setText(R.string.specials_schedule);
-
-        if (!mWebsite.getSpecialsDate().isEmpty()) {
-
-            if (mWebsite.isFlyerAvailable()) {
-                mSpecialsTextView.append(getResources().getString(R.string.specials_current));
-                mSpecialsTextView.append(mWebsite.getSpecialsDate());
-            } else {
-                mSpecialsTextView.append(getResources().getString(R.string.specials_next));
-                mSpecialsTextView.append(mWebsite.getSpecialsDate());
-            }
-        }
-    }
+//    private void buildText() {
+//        mSpecialsTextView.setText(R.string.specials_schedule);
+//
+//        if (!mWebsite.getSpecialsDate().isEmpty()) {
+//
+//            if (mWebsite.isFlyerAvailable()) {
+//                mSpecialsTextView.append(getResources().getString(R.string.specials_current));
+//                mSpecialsTextView.append(mWebsite.getSpecialsDate());
+//            } else {
+//                mSpecialsTextView.append(getResources().getString(R.string.specials_next));
+//                mSpecialsTextView.append(mWebsite.getSpecialsDate());
+//            }
+//        }
+//    }
 
     /**
      * Load flyer picture into ImageView.
@@ -117,7 +108,7 @@ public class SpecialsFragment extends Fragment {
             Document doc = null;
 
             try {
-                doc = Jsoup.connect("https://www.donaldsmarket.com/specials-flyer/").get();
+                doc = Jsoup.connect("https://donaldsmarkethastings.com/specials-flyer/").get();
             } catch (IOException e) {
                 e.printStackTrace();
             }

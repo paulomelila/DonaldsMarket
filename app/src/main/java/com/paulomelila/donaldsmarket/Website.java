@@ -1,4 +1,4 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
 import org.jsoup.nodes.Document;
 
@@ -18,9 +18,11 @@ public class Website {
      * @return url
      */
     public String getFlyerURL() {
-        return mDocument.getElementById("post-4052") // finding the correct div
-                .select("[src]")     // getting access to the src attribute
-                .attr("abs:src"); // returns the value of the src;
+          return mDocument.getElementsByClass("vc_single_image-wrapper   vc_box_border_grey")
+                  .attr("abs:href");
+//        return mDocument.getElementById("post-4052") // finding the correct div
+//                .select("[src]")     // getting access to the src attribute
+//                .attr("abs:src"); // returns the value of the src;
     }
 
     /**

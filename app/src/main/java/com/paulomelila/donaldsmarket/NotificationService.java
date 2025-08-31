@@ -1,4 +1,4 @@
-package com.gmail.paulovitormelila.donaldsmarket;
+package com.paulomelila.donaldsmarket;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -9,8 +9,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
+import android.os.Looper;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.Calendar;
 
@@ -29,7 +30,7 @@ public class NotificationService extends Service {
     // TODO: Find a way to restart service when device is rebooted
     @Override
     public void onCreate() {
-        handler = new Handler();
+        handler = new Handler(Looper.getMainLooper());
         runnable = new Runnable() {
             public void run() {
 
@@ -54,7 +55,7 @@ public class NotificationService extends Service {
     public void createNotification() {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
         intent.putExtra("Specials", 1);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.mipmap.dm_logo_round)
